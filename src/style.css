@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0a0a0c;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000;
+}
+
+.logo {
+  font-weight: bold;
+  color: #b0b0ff;
+}
+
+.logo .lines {
+  color: #00f;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.hero .graphic {
+  height: 200px;
+  background: lightgray;
+  margin: 20px;
+}
+
+.about {
+  padding: 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 200px;
+  height: 300px;
+  background: lightgray;
+  transform: skewY(-10deg);
+  border-radius: 16px;
+}
+
+.about-text {
+  max-width: 300px;
+  font-size: 0.8rem;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.projects {
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects h2 {
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+.project-box {
+  margin: 2rem auto;
+  text-align: left;
+  max-width: 90%;
+}
+
+.project-card {
+  height: 150px;
+  background: lightgray;
+  margin-top: 0.5rem;
+  border-radius: 16px;
+  transform: skewY(5deg);
+}
+
+footer .footer-area {
+  height: 150px;
+  background-color: #3a20da;
+}
+
+/* Animation helpers */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Example for parallax effect */
+.parallax {
+  will-change: transform;
+}
