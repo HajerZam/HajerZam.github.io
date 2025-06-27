@@ -246,3 +246,498 @@ span{
         margin-top: 4rem;
     }
 }
+
+/* Skills section responsiveness */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.skill h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #222;
+    border-radius: 2rem;
+    overflow: hidden;
+    height: 2rem;
+}
+
+.progress {
+    background-color: #7546E8;
+    color: #fff;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 1rem;
+    line-height: 2rem;
+    height: 100%;
+    width: 0; /* Start at 0 for animation */
+    transition: width 1.5s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .skill h3 {
+        font-size: 1.5rem;
+    }
+
+    .progress-bar {
+        height: 1.6rem;
+    }
+
+    .progress {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/*.about .education,
+.about .tools,
+.about .design-skills {
+  margin-top: 2rem;
+}
+
+.about h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #7546E8;
+}
+
+.about ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+  color: #ccc;
+}
+
+.about ul li {
+  margin-bottom: 0.5rem;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progress Bars for Design Skills
+.design-skill {
+  margin-bottom: 1.2rem;
+}
+
+.design-skill h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.design-progress-bar {
+  width: 100%;
+  background-color: #222;
+  height: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.design-progress {
+  height: 100%;
+  background-color: #7546E8;
+  border-radius: 8px;
+}
+
+/* Tool Icons as Cards 
+.tool-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #7546E8;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #7546E8;
+}
+
+.tool-icons a:hover {
+    color: #0D0E20;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #7546E8;
+    box-shadow: 0  0 25px #7546E8;
+}*/
+
+/* About Section Styles */
+.about {
+	min-height: 100vh;
+	padding: 8rem 9% 5rem;
+	background: linear-gradient(135deg, #0D0E20 0%, #1a1b3a 100%);
+}
+
+.about .content {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.about .title {
+	text-align: center;
+	margin-bottom: 6rem;
+}
+
+.about .title span {
+	font-size: 4rem;
+	font-weight: 700;
+	color: #7546E8;
+	position: relative;
+}
+
+.about .title span::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 4px;
+	background: linear-gradient(90deg, #7546E8, #9d6eff);
+	border-radius: 2px;
+}
+
+/* Main About Info */
+.about-details {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 6rem;
+	margin-bottom: 8rem;
+	align-items: center;
+}
+
+.about-details .left img {
+	width: 100%;
+	max-width: 350px;
+	border-radius: 20px;
+	box-shadow: 0 20px 40px rgba(117, 70, 232, 0.3);
+	transition: transform 0.3s ease;
+}
+
+.about-details .left img:hover {
+	transform: translateY(-10px);
+}
+
+.about-details .right .topic {
+	font-size: 2.8rem;
+	font-weight: 600;
+	color: #7546E8;
+	margin-bottom: 2rem;
+}
+
+.about-details .right p {
+	font-size: 1.8rem;
+	margin-bottom: 3rem;
+	color: #ccc;
+	line-height: 1.8;
+}
+
+.about-details .right .button button {
+	padding: 1.5rem 3rem;
+	background: linear-gradient(45deg, #7546E8, #9d6eff);
+	color: white;
+	font-size: 1.6rem;
+	font-weight: 600;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 10px 30px rgba(117, 70, 232, 0.4);
+}
+
+.about-details .right .button button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 15px 40px rgba(117, 70, 232, 0.6);
+}
+
+/* Enhanced Grid Layout */
+.about-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 4rem;
+	margin-top: 6rem;
+}
+
+/* Section Cards */
+.section-card {
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(117, 70, 232, 0.2);
+	border-radius: 20px;
+	padding: 3rem;
+	transition: all 0.3s ease;
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.section-card.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.section-card:hover {
+	transform: translateY(-10px);
+	border-color: rgba(117, 70, 232, 0.5);
+	box-shadow: 0 20px 40px rgba(117, 70, 232, 0.2);
+}
+
+.section-card h2 {
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+	color: #7546E8;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Education Section */
+.education ul {
+	list-style: none;
+	padding: 0;
+}
+
+.education ul li {
+	background: rgba(117, 70, 232, 0.1);
+	margin-bottom: 1.5rem;
+	padding: 2rem;
+	border-radius: 15px;
+	border-left: 4px solid #7546E8;
+	transition: all 0.3s ease;
+}
+
+.education ul li:hover {
+	background: rgba(117, 70, 232, 0.2);
+	transform: translateX(10px);
+}
+
+.education ul li strong {
+	color: #7546E8;
+	font-size: 1.6rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+}
+
+.skill-item {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 2rem;
+	border-radius: 15px;
+	border: 1px solid rgba(117, 70, 232, 0.3);
+	transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+	background: rgba(117, 70, 232, 0.1);
+	transform: translateY(-5px);
+}
+
+.skill-item h3 {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+.progress-bar {
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 25px;
+	overflow: hidden;
+	height: 12px;
+	margin-bottom: 0.5rem;
+}
+
+.progress {
+	background: linear-gradient(90deg, #7546E8, #9d6eff);
+	height: 100%;
+	border-radius: 25px;
+	transition: width 2s ease-in-out;
+	position: relative;
+}
+
+.progress::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+	animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(100%); }
+}
+
+.skill-percentage {
+	font-size: 1.2rem;
+	color: #7546E8;
+	font-weight: 600;
+	text-align: right;
+}
+
+/* Tools Section */
+.tools-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 2rem;
+}
+
+.tool-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 15px;
+	border: 1px solid rgba(117, 70, 232, 0.3);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.tool-item:hover {
+	background: rgba(117, 70, 232, 0.2);
+	transform: translateY(-10px);
+	box-shadow: 0 15px 30px rgba(117, 70, 232, 0.3);
+}
+
+.tool-item i {
+	font-size: 3rem;
+	color: #7546E8;
+	margin-bottom: 1rem;
+}
+
+.tool-item span {
+	font-size: 1.2rem;
+	text-align: center;
+	color: #ccc;
+}
+
+/* Design Skills with Enhanced Progress */
+.design-skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+}
+
+.design-skill-item {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 2rem;
+	border-radius: 15px;
+	border: 1px solid rgba(117, 70, 232, 0.3);
+}
+
+.design-skill-item h3 {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+.circular-progress {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin: 0 auto 1rem;
+}
+
+.circular-progress svg {
+	width: 100%;
+	height: 100%;
+	transform: rotate(-90deg);
+}
+
+.circular-progress circle {
+	fill: none;
+	stroke-width: 8;
+	stroke-linecap: round;
+}
+
+.circular-progress .bg-circle {
+	stroke: rgba(255, 255, 255, 0.1);
+}
+
+.circular-progress .progress-circle {
+	stroke: #7546E8;
+	stroke-dasharray: 251.2;
+	stroke-dashoffset: 251.2;
+	transition: stroke-dashoffset 2s ease-in-out;
+}
+
+.circular-progress .percentage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: #7546E8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.about {
+		padding: 4rem 5% 3rem;
+	}
+
+	.about .title span {
+		font-size: 3rem;
+	}
+
+	.about-details {
+		grid-template-columns: 1fr;
+		gap: 3rem;
+		text-align: center;
+	}
+
+	.about-grid {
+		grid-template-columns: 1fr;
+		gap: 3rem;
+	}
+
+	.section-card {
+		padding: 2rem;
+	}
+
+	.section-card h2 {
+		font-size: 2rem;
+	}
+
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.tools-grid {
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
+}
+
+/* Animation on scroll */
+.animate-on-scroll {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
