@@ -223,9 +223,66 @@
 		</div>
 	</section>
 
-	<!-- Projects Section -->
-	<section id="projects" class="projects">
+	<section id="projects" class="projects section">
+		<div class="content">
+			<div class="title">
+				<span>Projects</span>
+			</div>
+			<br>
+
+			<div class="project-filters">
+				<button class="btn filter-btn active" data-filter="all">All</button>
+				<button class="btn filter-btn" data-filter="42">42 Projects</button>
+				<button class="btn filter-btn" data-filter="personal">Personal Projects</button>
+			</div>
+
+			<div class="projects-grid animate-on-scroll">
+				<!-- 🟣 42 Projects -->
+				<div class="project-category" data-category="42">
+					<h2 data-category="42"><i class="fas fa-school"></i> 42 Projects</h2>
+					<div class="project-cards">
+						<div class="project-card" data-category="42">
+							<h3>Libft</h3>
+							<p>A C library re-implementing standard C functions. Focused on memory handling and string manipulation.</p>
+							<span class="tech">C</span>
+							<a href="#" class="btn">View Repo</a>
+						</div>
+						<div class="project-card" data-category="42">
+							<h3>Get Next Line</h3>
+							<p>Reads a line from a file descriptor. Handles dynamic memory and buffer management in C.</p>
+							<span class="tech">C</span>
+							<a href="#" class="btn">View Repo</a>
+						</div>
+						<!-- Add more 42 projects here -->
+					</div>
+				</div>
+				<!-- 💜 Personal Projects -->
+				<div class="project-category" data-category="personal">
+					<h2 data-category="personal"><i class="fas fa-user-astronaut"></i> Personal Projects</h2>
+					<div class="project-cards">
+						<div class="project-card" data-category="personal">
+							<img src="assets/portfolio-thumbnail.png" alt="Portfolio Project Screenshot" class="project-thumbnail">
+							<h3>Portfolio Website</h3>
+							<p>The site you're browsing now! Built with HTML, CSS, JavaScript. Fully responsive and animated.</p>
+							<span class="tech">HTML</span>
+							<span class="tech">CSS</span>
+							<span class="tech">JS</span>
+							<a href="https://github.com/HajerZam/HajerZam.github.io" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+						</div>
+						<div class="project-card" data-category="personal">
+							<img src="assets/portfolio-thumbnail.png" alt="Portfolio Project Screenshot" class="project-thumbnail">
+							<h3>UI/UX Redesign Case Study</h3>
+							<p>A redesign of a popular app interface for improved user experience and accessibility.</p>
+							<span class="tech">Figma</span>
+							<a href="#" class="btn">View</a>
+						</div>
+						<!-- Add more personal projects here -->
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
+
 
 	<!-- Contact Section -->
 	<section id="contact" class="contact">
