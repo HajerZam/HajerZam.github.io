@@ -111,25 +111,78 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		});
 
-        // Filter projects by category
+// Filter projects by category
 document.addEventListener("DOMContentLoaded", () => {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-	const projectCards = document.querySelectorAll(".project-card");
+	const filterButtons = document.querySelectorAll(".filter-btn");
+	const categories = document.querySelectorAll(".project-category");
 
 	filterButtons.forEach(btn => {
 		btn.addEventListener("click", () => {
 			const filter = btn.getAttribute("data-filter");
 
+			// Update button styles
 			filterButtons.forEach(b => b.classList.remove("active"));
 			btn.classList.add("active");
 
-			projectCards.forEach(card => {
-				if (filter === "all" || card.dataset.category === filter) {
-					card.style.display = "block";
+			// Show/hide entire categories
+			categories.forEach(category => {
+				const categoryType = category.getAttribute("data-category");
+				if (filter === "all" || filter === categoryType) {
+					category.style.display = "block";
 				} else {
-					card.style.display = "none";
+					category.style.display = "none";
 				}
 			});
 		});
+	});
+});
+
+// contact form submission
+document.addEventListener("DOMContentLoaded", () => {
+	const form = document.getElementById("contactForm");
+	const submitBtn = document.getElementById("submitBtn");
+	const btnText = submitBtn.querySelector(".btn-text");
+	const message = document.getElementById("formMessage");
+
+	form.addEventListener("submit", async (e) => {
+		e.preventDefault();
+
+		// Animate button to "Sending..."
+		submitBtn.classList.add("sending");
+		btnText.textContent = "Sending...";
+
+		// Submit via Fetch
+		try {
+			const formData = new FormData(form);
+			const res = await fetch(form.action, {
+				method: "POST",
+				body: formData
+			});
+
+			if (res.ok) {
+				// Show success message
+				form.reset();
+				message.textContent = "Message sent successfully! ♡";
+				message.classList.add("show");
+
+				// Update button
+				btnText.textContent = "Sent! I'll reply soon ♡";
+				submitBtn.classList.remove("sending");
+				submitBtn.classList.add("sent");
+
+				// Reset button after delay
+				setTimeout(() => {
+					btnText.textContent = "Send Message";
+					submitBtn.classList.remove("sent");
+					message.classList.remove("show");
+				}, 4000);
+			} else {
+				throw new Error("Submission failed!");
+			}
+		} catch (err) {
+			alert("Oops! Something went wrong :(");
+			btnText.textContent = "Send Message";
+			submitBtn.classList.remove("sending");
+		}
 	});
 });
