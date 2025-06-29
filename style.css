@@ -424,6 +424,19 @@ span{
 	gap: 1rem;
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.design-skills-section { grid-area: 1 / 1 / 2 / 4; } /* Top full width */
+.education-section { grid-area: 2 / 1 / 3/ 2; }     /* Middle left */
+.programming-skills-section { grid-area: 2 / 2 / 4 / 4; } /* Bottom left */
+.tools-section { grid-area: 3 / 1 / 4 / 2; }           /* Right side, 2 rows */
+
 /* Education Section */
 .education ul {
 	list-style: none;
