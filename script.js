@@ -142,47 +142,85 @@ document.addEventListener("DOMContentLoaded", () => {
 	const form = document.getElementById("contactForm");
 	const submitBtn = document.getElementById("submitBtn");
 	const btnText = submitBtn.querySelector(".btn-text");
+	const btnIcon = submitBtn.querySelector(".btn-icon");
 	const message = document.getElementById("formMessage");
 
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
-
-		// Animate button to "Sending..."
+		
+		// Animate button to "Sending..." state
 		submitBtn.classList.add("sending");
-		btnText.textContent = "Sending...";
-
-		// Submit via Fetch
+		btnText.innerHTML = 'Sending<span class="loading-dots"></span>';
+		btnIcon.className = "fas fa-spinner fa-spin btn-icon";
+		
+		// Clear any previous messages
+		message.classList.remove("show", "success", "error");
+		
 		try {
 			const formData = new FormData(form);
 			const res = await fetch(form.action, {
 				method: "POST",
 				body: formData
 			});
-
+			
 			if (res.ok) {
-				// Show success message
+				// Success state
 				form.reset();
-				message.textContent = "Message sent successfully! ♡";
-				message.classList.add("show");
-
-				// Update button
-				btnText.textContent = "Sent! I'll reply soon ♡";
+				message.textContent = "Message sent successfully! I'll get back to you soon ♡";
+				message.classList.add("show", "success");
+				
+				// Update button to success state
+				btnText.textContent = "Message Sent!";
+				btnIcon.className = "fas fa-check btn-icon";
 				submitBtn.classList.remove("sending");
 				submitBtn.classList.add("sent");
-
-				// Reset button after delay
+				
+				// Reset everything after delay
 				setTimeout(() => {
 					btnText.textContent = "Send Message";
+					btnIcon.className = "fas fa-paper-plane btn-icon";
 					submitBtn.classList.remove("sent");
 					message.classList.remove("show");
-				}, 4000);
+				}, 5000);
+				
 			} else {
-				throw new Error("Submission failed!");
+				throw new Error("Submission failed");
 			}
-		} catch (err) {
-			alert("Oops! Something went wrong :(");
+			
+		} catch (error) {
+			console.error("Form submission error:", error);
+			
+			// Error state
+			message.textContent = "Oops! Something went wrong. Please try again.";
+			message.classList.add("show", "error");
+			
+			// Reset button
 			btnText.textContent = "Send Message";
+			btnIcon.className = "fas fa-paper-plane btn-icon";
 			submitBtn.classList.remove("sending");
+			
+			// Hide error message after delay
+			setTimeout(() => {
+				message.classList.remove("show");
+			}, 4000);
 		}
+	});
+
+	// Add input validation feedback
+	const inputs = form.querySelectorAll('input, textarea');
+	inputs.forEach(input => {
+		input.addEventListener('blur', () => {
+			if (input.required && !input.value.trim()) {
+				input.style.borderColor = '#ff5252';
+			} else {
+				input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+			}
+		});
+		
+		input.addEventListener('input', () => {
+			if (input.style.borderColor === 'rgb(255, 82, 82)') {
+				input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+			}
+		});
 	});
 });
