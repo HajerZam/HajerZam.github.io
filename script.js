@@ -44,72 +44,71 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 500);
 });
 
-// Animation progress bars when in view
-		// Animate on scroll functionality
-		function animateOnScroll() {
-			const elements = document.querySelectorAll('.animate-on-scroll');
-			
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						
-						// Animate progress bars
-						const progressBars = entry.target.querySelectorAll('.progress');
-						progressBars.forEach(bar => {
-							const width = bar.getAttribute('data-width');
-							setTimeout(() => {
-								bar.style.width = width + '%';
-							}, 200);
-						});
-						
-						// Animate circular progress
-						const circularProgress = entry.target.querySelectorAll('.progress-circle');
-						circularProgress.forEach(circle => {
-							const percentage = circle.getAttribute('data-percentage');
-							const circumference = 2 * Math.PI * 36;
-							const offset = circumference - (percentage / 100) * circumference;
-							setTimeout(() => {
-								circle.style.strokeDashoffset = offset;
-							}, 500);
-						});
-					}
+
+function animateOnScroll() {
+	const elements = document.querySelectorAll('.animate-on-scroll');
+	
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+
+				const progressBars = entry.target.querySelectorAll('.progress');
+				progressBars.forEach(bar => {
+					const width = bar.getAttribute('data-width');
+					setTimeout(() => {
+						bar.style.width = width + '%';
+					}, 200);
 				});
-			}, {
-				threshold: 0.1,
-				rootMargin: '0px 0px -50px 0px'
-			});
-			
-			elements.forEach(element => {
-				observer.observe(element);
-			});
-		}
 
-		// Download CV function
-		function downloadCV() {
-			// Replace with actual CV download logic
-			alert('CV download functionality would be implemented here');
-		}
-
-		// Initialize animations when DOM is loaded
-		document.addEventListener('DOMContentLoaded', function() {
-			animateOnScroll();
+				const circularProgress = entry.target.querySelectorAll('.progress-circle');
+				circularProgress.forEach(circle => {
+					const percentage = circle.getAttribute('data-percentage');
+					const circumference = 2 * Math.PI * 36;
+					const offset = circumference - (percentage / 100) * circumference;
+					setTimeout(() => {
+						circle.style.strokeDashoffset = offset;
+					}, 500);
+				});
+			}
 		});
+	}, {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	});
+	
+	elements.forEach(element => {
+		observer.observe(element);
+	});
+}
 
-		// Add smooth scrolling and enhanced interactions
-		document.addEventListener('DOMContentLoaded', function() {
-			// Add hover effects to skill items
-			const skillItems = document.querySelectorAll('.skill-item, .tool-item, .design-skill-item');
-			skillItems.forEach(item => {
-				item.addEventListener('mouseenter', function() {
-					this.style.transform = 'translateY(-5px) scale(1.02)';
-				});
-				
-				item.addEventListener('mouseleave', function() {
-					this.style.transform = 'translateY(0) scale(1)';
-				});
-			});
+// Download CV func
+function downloadCV() {
+	const link = document.createElement('a');
+	link.href = 'assets/HajerZam_CV.pdf'; // Update with CV file path
+	link.download = 'HajerZam_CV.pdf';
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+}
+
+// Initialize animations
+document.addEventListener('DOMContentLoaded', function() {
+	animateOnScroll();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	const skillItems = document.querySelectorAll('.skill-item, .tool-item, .design-skill-item');
+	skillItems.forEach(item => {
+		item.addEventListener('mouseenter', function() {
+			this.style.transform = 'translateY(-5px) scale(1.02)';
 		});
+		
+		item.addEventListener('mouseleave', function() {
+			this.style.transform = 'translateY(0) scale(1)';
+		});
+	});
+});
 
 // Filter projects by category
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,11 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btn.addEventListener("click", () => {
 			const filter = btn.getAttribute("data-filter");
 
-			// Update button styles
 			filterButtons.forEach(b => b.classList.remove("active"));
 			btn.classList.add("active");
 
-			// Show/hide entire categories
 			categories.forEach(category => {
 				const categoryType = category.getAttribute("data-category");
 				if (filter === "all" || filter === categoryType) {
@@ -137,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-// contact form submission
+// contact form
 document.addEventListener("DOMContentLoaded", () => {
 	const form = document.getElementById("contactForm");
 	const submitBtn = document.getElementById("submitBtn");
@@ -148,12 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
 		
-		// Animate button to "Sending..." state
 		submitBtn.classList.add("sending");
 		btnText.innerHTML = 'Sending<span class="loading-dots"></span>';
 		btnIcon.className = "fas fa-spinner fa-spin btn-icon";
 		
-		// Clear any previous messages
 		message.classList.remove("show", "success", "error");
 		
 		try {
@@ -164,18 +159,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 			
 			if (res.ok) {
-				// Success state
 				form.reset();
 				message.textContent = "Message sent successfully! I'll get back to you soon ♡";
 				message.classList.add("show", "success");
-				
-				// Update button to success state
+
 				btnText.textContent = "Message Sent!";
 				btnIcon.className = "fas fa-check btn-icon";
 				submitBtn.classList.remove("sending");
 				submitBtn.classList.add("sent");
-				
-				// Reset everything after delay
+
 				setTimeout(() => {
 					btnText.textContent = "Send Message";
 					btnIcon.className = "fas fa-paper-plane btn-icon";
@@ -189,24 +181,20 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 		} catch (error) {
 			console.error("Form submission error:", error);
-			
-			// Error state
+
 			message.textContent = "Oops! Something went wrong. Please try again.";
 			message.classList.add("show", "error");
-			
-			// Reset button
+
 			btnText.textContent = "Send Message";
 			btnIcon.className = "fas fa-paper-plane btn-icon";
 			submitBtn.classList.remove("sending");
 			
-			// Hide error message after delay
 			setTimeout(() => {
 				message.classList.remove("show");
 			}, 4000);
 		}
 	});
 
-	// Add input validation feedback
 	const inputs = form.querySelectorAll('input, textarea');
 	inputs.forEach(input => {
 		input.addEventListener('blur', () => {
