@@ -85,7 +85,7 @@ function animateOnScroll() {
 // Download CV func
 function downloadCV() {
 	const link = document.createElement('a');
-	link.href = 'assets/HajerZam_CV.pdf'; // Update with CV file path
+	link.href = 'assets/cv/Hajer Al-Zammazi - Curriculum Vitae.pdf'; // Update with CV file path
 	link.download = 'HajerZam_CV.pdf';
 	document.body.appendChild(link);
 	link.click();
