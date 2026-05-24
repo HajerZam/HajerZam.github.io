@@ -4,441 +4,435 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 	<title>HAJERZAM Portfolio</title>
 	<link rel="icon" href="assets/icon.png" type="image/png">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
-		<a href="#" class="logo">Hajer Al-Zammazi</a>
-		<nav>
-			<a href="#">Home</a>
-			<a href="#about">About</a>
-			<a href="#projects">Projects</a>
-			<a href="#contact">Contact</a>
-		</nav>
-	</header>
-	
-	<section class="home">
-		<div class="home-img">
-			<img src="assets/Untitled59_20250712205816.png" alt="that's me!">
-		</div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- Floating orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<header>
+	<a href="#" class="logo">HZ<span class="logo-dot">.</span></a>
+	<nav>
+		<a href="#" class="nav-link">Home</a>
+		<a href="#about" class="nav-link">About</a>
+		<a href="#projects" class="nav-link">Projects</a>
+		<a href="#contact" class="nav-link">Contact</a>
+	</nav>
+	<div class="nav-indicator"></div>
+</header>
+
+<!-- HOME -->
+<section class="home" id="home">
+	<div class="home-inner">
 		<div class="home-content">
-			<h1>Hello! it's <span>Hajer</span></h1>
+			<div class="greeting-tag">✦ Available for work</div>
+			<h1 class="hero-name">Hello!<br>it's <span class="name-highlight">Hajer</span></h1>
 			<h3 class="typing-text">I'm a <span class="typed-text"></span><span class="cursor">|</span></h3>
-			<p>Frontend Developer and UI Designer currently studying at 42 Roma Elis. Experienced in modern web technologies, system programming, and user-centered design. Welcome to my portfolio website.</p>
-			<div class="social-icons">
-				<a href="https://www.linkedin.com/in/hajer-alzammazi-55901731b/" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-linkedin"></i></a>
-				<a href="https://github.com/HajerZam" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-				<a href="https://www.instagram.com/hajer_zam/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+			<p class="hero-desc">Frontend Developer and UI Designer currently studying at 42 Roma Elis. Experienced in modern web technologies, system programming, and user-centered design. Welcome to my portfolio website.</p>
+			<div class="home-actions">
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/in/hajer-alzammazi-55901731b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="https://github.com/HajerZam" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					<a href="https://www.instagram.com/hajer_zam/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+				</div>
+				<a href="#contact" class="btn btn-primary">Contact Me <i class="fas fa-arrow-right"></i></a>
 			</div>
-			<a href="#contact" class="btn">Contact Me</a>
 		</div>
-	</section>
-
-	<!-- About Section -->
-	<section class="about" id="about">
-		<div class="content">
-			<div class="title">
-				<span>About Me</span>
+		<div class="home-img">
+			<div class="img-frame">
+				<img src="assets/Untitled59_20250712205816.png" alt="that's me!">
+				<div class="img-glow"></div>
 			</div>
+			<div class="img-badge"><span>42</span>Roma Elis</div>
+		</div>
+	</div>
+	<div class="scroll-cue"><span>scroll</span><div class="scroll-line"></div></div>
+</section>
 
-			<!-- Main About Information -->
-			<div class="about-details animate-on-scroll">
-				<div class="left">
+<!-- ABOUT -->
+<section class="about" id="about">
+	<div class="content">
+		<div class="section-header animate-on-scroll">
+			<span class="section-label">01 — About</span>
+			<h2 class="section-title-big">About <em>Me</em></h2>
+		</div>
+
+		<div class="about-details animate-on-scroll">
+			<div class="left">
+				<div class="about-img-wrap">
 					<img src="assets/minime.png" alt="About Me">
+					<div class="about-img-ring"></div>
 				</div>
-				<div class="right">
-					<div class="topic"></div>
-					<p>
-						I am Hajer Al-Zammazi, a software engineering student at 42 Roma Elis with experience in frontend development, UI design, and system programming.
-					</p>
-					<p>
-						I mostly focus on building well structured, user-friendly websites and applications. I'm always learning new tools and frameworks to create clean, responsive, and accessible digital experiences — whether it's for blogs, web apps, or full websites.
-					</p>
-					<div class="button">
-						<button class="btn" onclick="downloadCV()">
-							<i class="fas fa-download"></i> Download CV
-						</button>
+			</div>
+			<div class="right">
+				<p>
+					I am Hajer Al-Zammazi, a software engineering student at 42 Roma Elis with experience in frontend development, UI design, and system programming.
+				</p>
+				<p>
+					I mostly focus on building well structured, user-friendly websites and applications. I'm always learning new tools and frameworks to create clean, responsive, and accessible digital experiences — whether it's for blogs, web apps, or full websites.
+				</p>
+				<div class="button">
+					<button class="btn btn-primary" onclick="downloadCV()">
+						<i class="fas fa-download"></i> Download CV
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="about-grid">
+			<!-- Education -->
+			<div class="section-card animate-on-scroll education-section">
+				<h2><i class="fas fa-graduation-cap"></i> Education</h2>
+				<div class="education">
+					<ul>
+						<li>
+							<strong>42 Roma Luiss</strong><br>
+							Software Engineering<br>
+							<small>Since December 2024</small>
+						</li>
+						<li>
+							<strong>Bachelor's in Informatics</strong><br>
+							Tunisia<br>
+							<small>2019 – 2023</small>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Programming Skills -->
+			<div class="section-card animate-on-scroll programming-skills-section">
+				<h2><i class="fas fa-code"></i> Programming Skills</h2>
+				<div class="skills-grid">
+					<div class="skill-item">
+						<div class="skill-header"><h3>HTML</h3><div class="skill-percentage">95%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="95"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>CSS</h3><div class="skill-percentage">85%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="85"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>JavaScript</h3><div class="skill-percentage">80%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="80"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>React</h3><div class="skill-percentage">75%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="75"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>Tailwind</h3><div class="skill-percentage">65%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="65"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>Python</h3><div class="skill-percentage">85%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="85"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>C Programming</h3><div class="skill-percentage">89%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="89"></div></div>
+					</div>
+					<div class="skill-item">
+						<div class="skill-header"><h3>Bash scripting</h3><div class="skill-percentage">67%</div></div>
+						<div class="progress-bar"><div class="progress" data-width="67"></div></div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Grid Layout -->
-			<div class="about-grid">
-				<!-- Education Section -->
-				<div class="section-card animate-on-scroll education-section">
-					<h2><i class="fas fa-graduation-cap"></i> Education</h2>
-					<div class="education">
-						<ul>
-							<li>
-								<strong>42 Roma Luiss</strong><br>
-								Software Engineering<br>
-								<small style="color: #7546E8;">Since December 2024</small>
-							</li>
-							<li>
-								<strong>Bachelor's in Informatics</strong><br>
-								Tunisia<br>
-								<small style="color: #7546E8;">2019 – 2023</small>
-							</li>
-						</ul>
-					</div>
+			<!-- Tools -->
+			<div class="section-card animate-on-scroll tools-section">
+				<h2><i class="fas fa-tools"></i> Tools & Technologies</h2>
+				<div class="tools-grid">
+					<div class="tool-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+					<div class="tool-item"><i class="fab fa-c"></i><span>Canva</span></div>
+					<div class="tool-item"><i class="fab fa-adobe"></i><span>Adobe Illustrator</span></div>
+					<div class="tool-item"><i class="fab fa-github"></i><span>GitHub</span></div>
+					<div class="tool-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+					<div class="tool-item"><i class="fab fa-linux"></i><span>Linux</span></div>
+					<div class="tool-item"><i class="fas fa-terminal"></i><span>Terminal</span></div>
+					<div class="tool-item"><i class="fas fa-code"></i><span>VS Code</span></div>
+					<div class="tool-item"><i class="fab fa-php"></i><span>PHP</span></div>
+					<div class="tool-item"><i class="fas fa-database"></i><span>MySQL</span></div>
 				</div>
+			</div>
 
-				<!-- Programming Skills -->
-				<div class="section-card animate-on-scroll programming-skills-section">
-					<h2><i class="fas fa-code"></i> Programming Skills</h2>
-					<div class="skills-grid">
-						<div class="skill-item">
-							<h3>HTML</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="95"></div>
-							</div>
-							<div class="skill-percentage">95%</div>
-						</div>
-						<div class="skill-item">
-							<h3>CSS</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="85"></div>
-							</div>
-							<div class="skill-percentage">85%</div>
-						</div>
-						<div class="skill-item">
-							<h3>JavaScript</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="80"></div>
-							</div>
-							<div class="skill-percentage">80%</div>
-						</div>
-						<div class="skill-item">
-							<h3>React</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="75"></div>
-							</div>
-							<div class="skill-percentage">75%</div>
-						</div>
-						<div class="skill-item">
-							<h3>Tailwind</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="65"></div>
-							</div>
-							<div class="skill-percentage">65%</div>
-						</div>
-						<div class="skill-item">
-							<h3>Python</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="85"></div>
-							</div>
-							<div class="skill-percentage">85%</div>
-						</div>
-						<div class="skill-item">
-							<h3>C Programming</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="89"></div>
-							</div>
-							<div class="skill-percentage">89%</div>
-						</div>
-						<div class="skill-item">
-							<h3>Bash scripting</h3>
-							<div class="progress-bar">
-								<div class="progress" data-width="67"></div>
-							</div>
-							<div class="skill-percentage">67%</div>
+			<!-- Design Skills -->
+			<div class="section-card animate-on-scroll design-skills-section">
+				<h2><i class="fas fa-palette"></i> Design Skills</h2>
+				<div class="design-skills-grid">
+					<div class="design-skill-item">
+						<h3>UI/UX Design</h3>
+						<div class="circular-progress">
+							<svg viewBox="0 0 80 80">
+								<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
+								<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="85"></circle>
+							</svg>
+							<div class="percentage">85%</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- Tools & Technologies -->
-				<div class="section-card animate-on-scroll tools-section">
-					<h2><i class="fas fa-tools"></i> Tools & Technologies</h2>
-					<div class="tools-grid">
-						<div class="tool-item">
-							<i class="fab fa-figma"></i>
-							<span>Figma</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-c"></i>
-							<span>Canva</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-adobe-illustrator"></i>
-							<span>Adobe Illustrator</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-github"></i>
-							<span>GitHub</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-git-alt"></i>
-							<span>Git</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-linux"></i>
-							<span>Linux</span>
-						</div>
-						<div class="tool-item">
-							<i class="fas fa-terminal"></i>
-							<span>Terminal</span>
-						</div>
-						<div class="tool-item">
-							<i class="fas fa-code"></i>
-							<span>VS Code</span>
-						</div>
-						<div class="tool-item">
-							<i class="fab fa-php"></i>
-							<span>PHP</span>
-						</div>
-						<div class="tool-item">
-							<i class="fas fa-database"></i>
-							<span>MySQL</span>
+					<div class="design-skill-item">
+						<h3>Prototyping</h3>
+						<div class="circular-progress">
+							<svg viewBox="0 0 80 80">
+								<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
+								<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="87"></circle>
+							</svg>
+							<div class="percentage">87%</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- Design Skills -->
-				<div class="section-card animate-on-scroll design-skills-section">
-					<h2><i class="fas fa-palette"></i> Design Skills</h2>
-					<div class="design-skills-grid">
-						<div class="design-skill-item">
-							<h3>UI/UX Design</h3>
-							<div class="circular-progress">
-								<svg>
-									<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
-									<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="85"></circle>
-								</svg>
-								<div class="percentage">85%</div>
-							</div>
+					<div class="design-skill-item">
+						<h3>Responsive Design</h3>
+						<div class="circular-progress">
+							<svg viewBox="0 0 80 80">
+								<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
+								<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="80"></circle>
+							</svg>
+							<div class="percentage">80%</div>
 						</div>
-						<div class="design-skill-item">
-							<h3>Prototyping</h3>
-							<div class="circular-progress">
-								<svg>
-									<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
-									<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="87"></circle>
-								</svg>
-								<div class="percentage">87%</div>
-							</div>
-						</div>
-						<div class="design-skill-item">
-							<h3>Responsive Design</h3>
-							<div class="circular-progress">
-								<svg>
-									<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
-									<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="80"></circle>
-								</svg>
-								<div class="percentage">80%</div>
-							</div>
-						</div>
-						<div class="design-skill-item">
-							<h3>Color Theory</h3>
-							<div class="circular-progress">
-								<svg>
-									<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
-									<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="95"></circle>
-								</svg>
-								<div class="percentage">95%</div>
-							</div>
+					</div>
+					<div class="design-skill-item">
+						<h3>Color Theory</h3>
+						<div class="circular-progress">
+							<svg viewBox="0 0 80 80">
+								<circle class="bg-circle" cx="40" cy="40" r="36"></circle>
+								<circle class="progress-circle" cx="40" cy="40" r="36" data-percentage="95"></circle>
+							</svg>
+							<div class="percentage">95%</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<!-- Projects Section -->
-	<section id="projects" class="projects section">
-		<div class="content">
-			<div class="title">
-				<span>Projects</span>
-			</div>
-			<br>
+<!-- PROJECTS -->
+<section id="projects" class="projects section">
+	<div class="content">
+		<div class="section-header animate-on-scroll">
+			<span class="section-label">02 — Work</span>
+			<h2 class="section-title-big"><em>Projects</em></h2>
+		</div>
 
-			<div class="project-filters">
-				<button class="btn filter-btn active" data-filter="all">All</button>
-				<button class="btn filter-btn" data-filter="42">42 Projects</button>
-				<button class="btn filter-btn" data-filter="personal">Personal Projects</button>
-			</div>
+		<div class="project-filters">
+			<button class="filter-btn active" data-filter="all">All</button>
+			<button class="filter-btn" data-filter="42">42 Projects</button>
+			<button class="filter-btn" data-filter="personal">Personal Projects</button>
+		</div>
 
-			<div class="projects-grid animate-on-scroll">
-				<!-- 🟣 42 Projects -->
-				<div class="project-category" data-category="42">
-					<h2><i class="fas fa-school"></i> 42 Projects</h2>
-					<div class="project-cards">
-						<div class="project-card" data-category="42">
-							<h3>Libft</h3>
-							<p>A C library re-implementing standard C functions. Focused on memory handling and string manipulation.</p>
+		<div class="projects-grid animate-on-scroll">
+			<!-- 42 Projects -->
+			<div class="project-category" data-category="42">
+				<h2 class="cat-title"><i class="fas fa-school"></i> 42 Projects</h2>
+				<div class="project-cards">
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Libft</h3>
+						<p>A C library re-implementing standard C functions. Focused on memory handling and string manipulation.</p>
+						<div class="card-footer">
 							<span class="tech">C</span>
-							<a href="https://github.com/HajerZam/C-libft-Project" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+							<a href="https://github.com/HajerZam/C-libft-Project" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Get Next Line</h3>
-							<p>Reads a line from a file descriptor. Handles dynamic memory and buffer management in C.</p>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Get Next Line</h3>
+						<p>Reads a line from a file descriptor. Handles dynamic memory and buffer management in C.</p>
+						<div class="card-footer">
 							<span class="tech">C</span>
-							<a href="https://github.com/HajerZam/C-Project-Get_Next_Line" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+							<a href="https://github.com/HajerZam/C-Project-Get_Next_Line" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Printf</h3>
-							<p>Re-implementation of the printf function in C. Supports various format specifiers and flags.</p>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Printf</h3>
+						<p>Re-implementation of the printf function in C. Supports various format specifiers and flags.</p>
+						<div class="card-footer">
 							<span class="tech">C</span>
-							<a href="https://github.com/HajerZam/C-Project-ft_printf" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+							<a href="https://github.com/HajerZam/C-Project-ft_printf" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Born2beroot</h3>
-							<p>Linux system administration project. Configured a virtual machine with essential services.</p>
-							<span class="tech">Linux</span>
-							<span class="tech">Virtual machine</span>
-							<a href="#" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Born2beroot</h3>
+						<p>Linux system administration project. Configured a virtual machine with essential services.</p>
+						<div class="card-footer">
+							<span class="tech">Linux</span><span class="tech">Virtual machine</span>
+							<a href="#" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Push_swap</h3>
-							<p>Sorting algorithm project. Implemented efficient sorting algorithms in C using Radix sort optimized with chunks.</p>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Push_swap</h3>
+						<p>Sorting algorithm project. Implemented efficient sorting algorithms in C using Radix sort optimized with chunks.</p>
+						<div class="card-footer">
 							<span class="tech">C</span>
-							<a href="https://github.com/HajerZam/C-Project-Push_swap" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+							<a href="https://github.com/HajerZam/C-Project-Push_swap" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Pipex</h3>
-							<p>Simulates a shell command pipeline. Handles multiple processes and inter-process communication in C.</p>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Pipex</h3>
+						<p>Simulates a shell command pipeline. Handles multiple processes and inter-process communication in C.</p>
+						<div class="card-footer">
 							<span class="tech">C</span>
-							<a href="https://github.com/HajerZam/C-Project-Pipex" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+							<a href="https://github.com/HajerZam/C-Project-Pipex" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>So_Long</h3>
-							<p>A simple 2D game using the MiniLibX library. Focuses on graphics rendering and event handling in C.</p>
-							<span class="tech">C</span>
-							<span class="tech">MiniLibX</span>
-							<span class="tech">graphics</span>
-							<a href="https://github.com/HajerZam/C-Project-So_long" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>So_Long</h3>
+						<p>A simple 2D game using the MiniLibX library. Focuses on graphics rendering and event handling in C.</p>
+						<div class="card-footer">
+							<span class="tech">C</span><span class="tech">MiniLibX</span><span class="tech">graphics</span>
+							<a href="https://github.com/HajerZam/C-Project-So_long" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Philosophers</h3>
-							<p>Synchronization problem in C. Implements a solution to the dining philosophers problem using threads.</p>
-							<span class="tech">C</span>
-							<span class="tech">Threads</span>
-							<a href="https://github.com/HajerZam/C-Project-Philosophers" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Philosophers</h3>
+						<p>Synchronization problem in C. Implements a solution to the dining philosophers problem using threads.</p>
+						<div class="card-footer">
+							<span class="tech">C</span><span class="tech">Threads</span>
+							<a href="https://github.com/HajerZam/C-Project-Philosophers" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Minishell</h3>
-							<p>A simple shell implementation in C. Supports basic shell commands and features.</p>
-							<span class="tech">C</span>
-							<span class="tech">Shell</span>
-							<span class="tech">Bash</span>
-							<span class="tech">Unix</span>
-							<a href="https://github.com/HajerZam/Minishell-WIZARDS" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Minishell</h3>
+						<p>A simple shell implementation in C. Supports basic shell commands and features.</p>
+						<div class="card-footer">
+							<span class="tech">C</span><span class="tech">Shell</span><span class="tech">Bash</span><span class="tech">Unix</span>
+							<a href="https://github.com/HajerZam/Minishell-WIZARDS" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="42">
-							<h3>Cub3D</h3>
-							<p>A recreation of the Wolfenstein 3D game, which is considered the first FPS (First Person Shooter) ever created.</p>
-							<span class="tech">C</span>
-							<span class="tech">Raycast</span>
-							<span class="tech">Graphics Library</span>
-							<span class="tech">DDA</span>
-							<span class="tech">Algorithms</span>
-							<a href="https://github.com/HajerZam/cub3D-COCAINE" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card" data-category="42">
+						<div class="card-glow"></div>
+						<h3>Cub3D</h3>
+						<p>A recreation of the Wolfenstein 3D game, considered the first FPS ever created.</p>
+						<div class="card-footer">
+							<span class="tech">C</span><span class="tech">Raycast</span><span class="tech">Graphics Library</span><span class="tech">DDA</span><span class="tech">Algorithms</span>
+							<a href="https://github.com/HajerZam/cub3D-COCAINE" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<!-- Add more 42 projects here -->
 					</div>
 				</div>
-				<!-- 💜 Personal Projects -->
-				<div class="project-category" data-category="personal">
-					<h2><i class="fas fa-user-astronaut"></i> Personal Projects</h2>
-					<div class="project-cards">
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/portfolio-rec.gif" alt="Portfolio Project Screenshot" class="project-thumbnail">
-							<h3>Portfolio Website</h3>
-							<p>The site you're browsing now! Built with HTML, CSS, JavaScript. Fully responsive and animated.</p>
-							<span class="tech">HTML</span>
-							<span class="tech">CSS</span>
-							<span class="tech">JS</span>
-							<a href="https://github.com/HajerZam/HajerZam.github.io" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+			</div>
+
+			<!-- Personal Projects -->
+			<div class="project-category" data-category="personal">
+				<h2 class="cat-title"><i class="fas fa-user-astronaut"></i> Personal Projects</h2>
+				<div class="project-cards">
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/portfolio-rec.gif" alt="Portfolio Project Screenshot" class="project-thumbnail">
+						<h3>Portfolio Website</h3>
+						<p>The site you're browsing now! Built with HTML, CSS, JavaScript. Fully responsive and animated.</p>
+						<div class="card-footer">
+							<div><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JS</span></div>
+							<a href="https://github.com/HajerZam/HajerZam.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-card">GitHub <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/Changeable Color.png" alt="Portfolio Project Screenshot" class="project-thumbnail">
-							<h3>UI App design Case Study</h3>
-							<p>a UI Design for a comprehensive self-care application concept that explores how users might track their mood, sleep patterns, and daily wellness activities through an intuitive and calming interface.</p>
-							<span class="tech">Figma</span>
-							<span class="tech">Canva</span>
-							<a href="https://spiky-gas-34c.notion.site/Hello-Blue-Self-Care-Companion-App-22385fd1095e801d89cfe4a752aec82a" target="_blank" rel="noopener noreferrer" class="btn">View</a>
+					</div>
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/Changeable Color.png" alt="Portfolio Project Screenshot" class="project-thumbnail">
+						<h3>UI App Design Case Study</h3>
+						<p>A UI Design for a comprehensive self-care application concept exploring mood tracking, sleep patterns, and daily wellness activities through an intuitive interface.</p>
+						<div class="card-footer">
+							<div><span class="tech">Figma</span><span class="tech">Canva</span></div>
+							<a href="https://spiky-gas-34c.notion.site/Hello-Blue-Self-Care-Companion-App-22385fd1095e801d89cfe4a752aec82a" target="_blank" rel="noopener noreferrer" class="btn btn-card">View <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/screenshot.png" alt="Recreation of notion landing page" class="project-thumbnail">
-							<h3>Recreation of Notion Landing Page</h3>
-							<p>A recreation of the Notion landing page using HTML, CSS, Bootstrap 5 and JavaScript. Focused on responsive design and animations.</p>
-							<span class="tech">HTML</span>
-							<span class="tech">CSS</span>
-							<span class="tech">Bootstrap</span>
-							<span class="tech">JS</span>
-							<a href="https://hajerzam.github.io/Recreate_landing_page_for_Notion/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+					</div>
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/screenshot.png" alt="Recreation of notion landing page" class="project-thumbnail">
+						<h3>Recreation of Notion Landing Page</h3>
+						<p>A recreation of the Notion landing page using HTML, CSS, Bootstrap 5 and JavaScript. Focused on responsive design and animations.</p>
+						<div class="card-footer">
+							<div><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Bootstrap</span><span class="tech">JS</span></div>
+							<a href="https://hajerzam.github.io/Recreate_landing_page_for_Notion/" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/Screenshot 2025-01-30 212215.png" alt="zest HUB- redesign study" class="project-thumbnail">
-							<h3>Redesign Study for Zest the Hub app</h3>
-							<p>A redesign study for the Zest the Hub app, focusing on improving user experience and interface design. The project includes a detailed case study and design prototypes.</p>
-							<span class="tech">Figma</span>
-							<a href="https://spiky-gas-34c.notion.site/Zest-App-Redesign-Case-Study-23385fd1095e809791abe57296f079d4?source=copy_link" target="_blank" rel="noopener noreferrer" class="btn">View Case Study</a>
+					</div>
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/Screenshot 2025-01-30 212215.png" alt="zest HUB- redesign study" class="project-thumbnail">
+						<h3>Redesign Study for Zest the Hub app</h3>
+						<p>A redesign study for the Zest the Hub app, focusing on improving user experience and interface design. Includes a detailed case study and design prototypes.</p>
+						<div class="card-footer">
+							<div><span class="tech">Figma</span></div>
+							<a href="https://spiky-gas-34c.notion.site/Zest-App-Redesign-Case-Study-23385fd1095e809791abe57296f079d4" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Case Study <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/screenrecord_1.gif" alt="Tech & business blog CMS" class="project-thumbnail">
-							<h3>Tech & Business Blog CMS</h3>
-							<p>A modern blog content management system built with Next.js, TypeScript, and Tailwind CSS, using Notion as a headless CMS. featuring a glassmorphism design with beautiful color gradients and smooth animations as the topic of this project is a blog website for a tech and business blog.</p>
-							<span class="tech">Next.js</span>
-							<span class="tech">TypeScript</span>
-							<span class="tech">Tailwind CSS</span>
-							<span class="tech">Notion</span>
-							<a href="https://github.com/HajerZam/Blog-CMS" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/screenrecord_1.gif" alt="Tech & business blog CMS" class="project-thumbnail">
+						<h3>Tech & Business Blog CMS</h3>
+						<p>A modern blog CMS built with Next.js, TypeScript, and Tailwind CSS, using Notion as a headless CMS. Features glassmorphism design with smooth animations.</p>
+						<div class="card-footer">
+							<div><span class="tech">Next.js</span><span class="tech">TypeScript</span><span class="tech">Tailwind CSS</span><span class="tech">Notion</span></div>
+							<a href="https://github.com/HajerZam/Blog-CMS" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<div class="project-card" data-category="personal">
-							<img src="assets/projects_thumbnails/screenshot_coffee_2.gif" alt="Coffee Shop Website" class="project-thumbnail">
-							<h3>Stella & Crema — Coffee Shop Website (Concept Demo)</h3>
-							<p>This responsive one-page site highlights modern UI/UX principles, interactive components, and clean code architecture using HTML, Tailwind CSS, and JavaScript.</p>
-							<span class="tech">HTML</span>
-							<span class="tech">Tailwind CSS</span>
-							<span class="tech">JavaScript</span>
-							<a href="https://github.com/HajerZam/Stella_E_Crema_PAGE" target="_blank" rel="noopener noreferrer" class="btn">View Repo</a>
+					</div>
+					<div class="project-card has-thumb" data-category="personal">
+						<div class="card-glow"></div>
+						<img src="assets/projects_thumbnails/screenshot_coffee_2.gif" alt="Coffee Shop Website" class="project-thumbnail">
+						<h3>Stella & Crema — Coffee Shop Website</h3>
+						<p>Responsive one-page site highlighting modern UI/UX principles, interactive components, and clean code architecture.</p>
+						<div class="card-footer">
+							<div><span class="tech">HTML</span><span class="tech">Tailwind CSS</span><span class="tech">JavaScript</span></div>
+							<a href="https://github.com/HajerZam/Stella_E_Crema_PAGE" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Repo <i class="fas fa-external-link-alt"></i></a>
 						</div>
-						<!-- Add more personal projects here -->
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact" class="contact">
+	<div class="content">
+		<div class="section-header animate-on-scroll">
+			<span class="section-label">03 — Contact</span>
+			<h2 class="section-title-big">Let's <em>Talk</em></h2>
+		</div>
+		<div class="contact-container animate-on-scroll">
+			<form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+				<input type="hidden" name="access_key" value="6ae153b0-5463-4fce-a02d-112b74724ee9" />
+				<input type="checkbox" name="botcheck" style="display:none;" />
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="content">
-            <div class="title">
-                <h2><span>Contact Me</span></h2>
-            </div>
-            <div class="contact-container animate-on-scroll">
-                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="6ae153b0-5463-4fce-a02d-112b74724ee9" />
-                    <input type="checkbox" name="botcheck" style="display:none;" />
-                    
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn" id="submitBtn">
-                        <div class="btn-content">
-                            <i class="fas fa-paper-plane btn-icon"></i>
-                            <span class="btn-text">Send Message</span>
-                        </div>
-                    </button>
-                    
-                    <div id="formMessage" class="form-message"></div>
-                </form>
-            </div>
-        </div>
-    </section>
+				<div class="form-group">
+					<label>Your Name</label>
+					<input type="text" name="name" placeholder="e.g. Jane Doe" required>
+				</div>
+				<div class="form-group">
+					<label>Your Email</label>
+					<input type="email" name="email" placeholder="jane@example.com" required>
+				</div>
+				<div class="form-group">
+					<label>Message</label>
+					<textarea name="message" placeholder="What's on your mind?" rows="5" required></textarea>
+				</div>
 
-	<script src="script.js"></script>
+				<button type="submit" class="btn btn-primary" id="submitBtn">
+					<div class="btn-content">
+						<i class="fas fa-paper-plane btn-icon"></i>
+						<span class="btn-text">Send Message</span>
+					</div>
+				</button>
+
+				<div id="formMessage" class="form-message"></div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
